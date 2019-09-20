@@ -1,0 +1,8 @@
+{
+  "name": "WunderListBE",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Build-Week-WunderList2-0/Backend.git",
+  "author": "<antoniounivers@gmail.com>",
+  "license": "MIT"
+}
