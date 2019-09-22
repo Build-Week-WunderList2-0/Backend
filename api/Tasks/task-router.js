@@ -57,4 +57,17 @@ router.put('/update/:id', (req, res) => {
 
 })
 
+router.delete('/delete/:id', (req, res) => {
+    const { id } = req.params
+    Tasks.remove(id)
+        .then(gone => {
+            if (gone === 0) {
+                res.status(404).json({ message: "no user by that ID" })
+            }
+            else {
+                res.status(200).json({ success: "the user will never be seen again! Muhahahha!" })
+            }
+        })
+})
+
 module.exports = router
