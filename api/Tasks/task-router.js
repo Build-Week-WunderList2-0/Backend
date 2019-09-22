@@ -22,4 +22,15 @@ router.get('/all', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    const id = req.params
+    Tasks.findById(id)
+        .then(res => {
+            res.status(201).json({ res })
+        })
+        .catch(err => {
+            res.status(500).json({ err })
+        })
+})
+
 module.exports = router
