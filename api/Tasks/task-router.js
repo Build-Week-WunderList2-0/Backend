@@ -24,13 +24,16 @@ router.get('/all', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const id = req.params
-    Tasks.findById(id)
+    console.log(id)
+    Tasks.findBy(id)
         .then(res => {
             res.status(201).json({ res })
         })
         .catch(err => {
             res.status(500).json({ err })
         })
+
+    //there is an issue here that needs to be resolved. 
 })
 
 module.exports = router
