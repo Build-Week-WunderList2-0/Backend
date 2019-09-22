@@ -25,7 +25,7 @@ Example response:
 ```
 
 
-### **`POST /auth/login**
+### ** `POST /auth/login` **
 
 Example request body:
 ```
@@ -40,8 +40,9 @@ Example response:
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsampleCIsImlhdCI6MTU2OTE3MDg1OCwiZXhwIjoxNTY5NjAyODU4fQ.oA3AUqKR2KzmPpOEWhKZWhWoR8TjcWlW0JRPmIczwdc"
 }
 ```
+## Tasks 
 
-### **`POST /tasks/add**`
+### ** `POST /tasks/add` **
 
 Example request body:
 ```
