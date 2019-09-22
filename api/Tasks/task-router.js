@@ -35,4 +35,26 @@ router.get('/:id', (req, res) => {
         })
 })
 
+router.put('/update/:id', (req, res) => {
+    const { id } = req.params
+    const task = req.body
+    Tasks.update(id, task)
+        .then(response => {
+            if (response === 0) {
+                res.status(404).json({ message: 'there is no user by that ID' })
+            }
+            else {
+                Tasks.find(id)
+                    .then(user => {
+                        res.status(201).json(user)
+                    })
+            }
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'there was a mistake' })
+            console.log(err)
+        })
+
+})
+
 module.exports = router
