@@ -13,7 +13,6 @@ exports.up = function (knex) {
             task.string('segment', 128).notNullable()
             task.string('due_by', 255).notNullable()
             task.boolean('completed')
-            task.timestamp('created_at').defaultTo(knex.fn.now())
         })
 };
 
