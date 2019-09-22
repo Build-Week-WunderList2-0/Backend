@@ -25,7 +25,7 @@ Example response:
 ```
 
 
-### ** `POST /auth/login` **
+### **`POST /auth/login`**
 
 Example request body:
 ```
@@ -42,7 +42,7 @@ Example response:
 ```
 ## Tasks 
 
-### ** `POST /tasks/add` **
+### **`POST /tasks/add`**
 
 Example request body:
 ```
