@@ -26,14 +26,13 @@ router.get('/:id', (req, res) => {
     const id = req.params
     console.log(id)
     Tasks.findBy(id)
-        .then(res => {
-            res.status(201).json({ res })
+        .then(result => {
+            res.status(201).json({ result })
         })
         .catch(err => {
             res.status(500).json({ err })
+            console.log(err)
         })
-
-    //there is an issue here that needs to be resolved. 
 })
 
 module.exports = router
