@@ -1,4 +1,4 @@
-# ** Documentation **
+# **Documentation**
 
 ## Endpoints
 
@@ -7,10 +7,10 @@
 **`POST /auth/register`**
 
 Example request body:
-`
+```
 {
 	"username":"alex",
 	"password":"bestPassWerd"
 }
-`
+```
 
