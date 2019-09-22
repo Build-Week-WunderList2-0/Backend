@@ -1,8 +1,8 @@
-#**Documentation**
+# ** Documentation **
 
-##Endpoints
+## Endpoints
 
-###Authentication
+### Authentication
 
 **`POST /auth/register`**
 
