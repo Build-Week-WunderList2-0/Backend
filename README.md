@@ -44,6 +44,8 @@ Example response:
 
 ### **`POST /tasks/add`**
 
+Requires an authorization header with a JWT. it will return an array of objects in this format:
+
 Example request body:
 ```
 {
@@ -72,6 +74,8 @@ Example response:
 
 ### **`GET /tasks/all`**
 
+Requires an authorization header with a JWT. it will return an array of objects in this format:
+
 Example response:
 ```
 "gotem": [
@@ -98,6 +102,8 @@ Example response:
 
 ### **`GET /tasks/:id`**
 
+Requires an authorization header with a JWT. it will return an array of objects in this format:
+
 Example response:
 ```
 {
@@ -116,6 +122,8 @@ Example response:
 ```
 
 ### **`PUT /tasks/update/:id`**
+
+Requires an authorization header with a JWT. it will return an array of objects in this format:
 
 Example request body:
 ```
@@ -148,6 +156,8 @@ Example response:
 ```
 
 ### **`DELETE /tasks/delete/:id`**
+
+Requires an authorization header with a JWT. it will return an array of objects in this format:
 
 Example response:
 ```
