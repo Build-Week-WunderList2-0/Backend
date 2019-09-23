@@ -123,7 +123,7 @@ Example response:
 
 ### **`PUT /tasks/update/:id`**
 
-Requires an authorization header with a JWT. it will return an array of objects in this format:
+Requires an authorization header with a JWT. Expects an object of one of the fields that you want to update. 
 
 Example request body:
 ```
@@ -157,7 +157,7 @@ Example response:
 
 ### **`DELETE /tasks/delete/:id`**
 
-Requires an authorization header with a JWT. it will return an array of objects in this format:
+Requires an authorization header with a JWT. This will delete the task of the ID.
 
 Example response:
 ```
