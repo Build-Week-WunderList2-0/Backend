@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const Tasks = require('./task-model')
-
-router.post('/add', (req, res) => {
+const authenticator = require('../User/user-auth-middleware')
+router.post('/add', authenticator, (req, res) => {
     let task = req.body
     Tasks.add(task)
         .then(saved => {
@@ -12,7 +12,7 @@ router.post('/add', (req, res) => {
         })
 })
 
-router.get('/all', (req, res) => {
+router.get('/all', authenticator, (req, res) => {
     Tasks.find()
         .then(gotem => {
             res.status(200).json({ gotem })
@@ -22,7 +22,7 @@ router.get('/all', (req, res) => {
         })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', authenticator, (req, res) => {
     const id = req.params
     console.log(id)
     Tasks.findBy(id)
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-router.put('/update/:id', (req, res) => {
+router.put('/update/:id', authenticator, (req, res) => {
     const { id } = req.params
     const task = req.body
     Tasks.update(id, task)
@@ -57,7 +57,7 @@ router.put('/update/:id', (req, res) => {
 
 })
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id', authenticator, (req, res) => {
     const { id } = req.params
     Tasks.remove(id)
         .then(gone => {
