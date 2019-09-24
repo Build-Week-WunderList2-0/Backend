@@ -3,7 +3,7 @@ exports.seed = function (knex) {
   // Deletes ALL existing entries
 
   // Inserts seed entries
-  return knex('tasks').insert([
+  return knex('tasks').del([
     {
       user_id: 1,
       title: "create the seed data",
