@@ -7,7 +7,7 @@ exports.up = function (knex) {
     })
         .createTable('tasks', task => {
             task.increments()
-            task.string('user_id', 128).notNullable().unsigned().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE')
+            task.integer('user_id', 128).notNullable().unsigned().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE')
             task.string('title', 255).notNullable()
             task.string('description', 255).notNullable()
             task.string('segment', 128).notNullable()

@@ -37,7 +37,8 @@ Example request body:
 Example response:
 ```
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFsampleCIsImlhdCI6MTU2OTE3MDg1OCwiZXhwIjoxNTY5NjAyODU4fQ.oA3AUqKR2KzmPpOEWhKZWhWoR8TjcWlW0JRPmIczwdc"
+  "user_id": 2,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZvbyIsImlhdCI6MTU2OTMwMjgwNiwiZXhwIjoxNTY5NzM0ODA2fQ.WOgUS5vH1jvFJR7hWuNCVujOoRWleTJoVchN_GJRHVg"
 }
 ```
 ## Tasks 
@@ -72,9 +73,16 @@ Example response:
 }
 ```
 
-### **`GET /tasks/all`**
+### **`GET /tasks/`**
 
 Requires an `authorization` header with a JWT. it will return an array of objects in this format:
+Example request body:
+```
+{
+  "user_id": 1
+}
+
+```
 
 Example response:
 ```

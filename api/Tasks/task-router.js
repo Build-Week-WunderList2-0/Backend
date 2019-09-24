@@ -2,32 +2,45 @@ const router = require('express').Router()
 const Tasks = require('./task-model')
 const authenticator = require('../User/user-auth-middleware')
 router.post('/add', authenticator, (req, res) => {
-    let task = req.body
+    const task = req.body
     Tasks.add(task)
         .then(saved => {
-            res.status(201).json({ saved })
+            res.status(201).json( saved )
         })
         .catch(err => {
             res.status(500).json({ err })
         })
 })
 
-router.get('/all', authenticator, (req, res) => {
-    Tasks.find()
+router.get('/', authenticator, (req, res) => {
+         const {user_id} =  req.body
+         
+    Tasks.find(user_id)
         .then(gotem => {
-            res.status(200).json({ gotem })
+            res.status(200).json( gotem )
         })
         .catch(err => {
-            res.status(500).json({ err })
+            res.status(500).json(err)
         })
 })
+
+// router.get('/all', authenticator, (req, res) => {
+//     // const id =  req.body
+// Tasks.findAll()
+//    .then(gotem => {
+//        res.status(200).json({ gotem })
+//    })
+//    .catch(err => {
+//        res.status(500).json(err)
+//    })
+// })
 
 router.get('/:id', authenticator, (req, res) => {
     const id = req.params
-    console.log(id)
+    
     Tasks.findBy(id)
         .then(result => {
-            res.status(201).json({ result })
+            res.status(201).json( result )
         })
         .catch(err => {
             res.status(500).json({ err })
