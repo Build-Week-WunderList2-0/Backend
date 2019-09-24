@@ -47,7 +47,7 @@ function findById(id) {
 }
 
 async function add(task) {
-    const [id] = await db('tasks').insert(task)
+    const [id] = await db('tasks').insert(task, "id")
     return findById(id)
 }
 
