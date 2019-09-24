@@ -5,13 +5,38 @@ module.exports = {
     findBy,
     findById,
     find,
+    findAll,
     update,
     remove,
 }
 
-function find() {
+function findAll() {
     return db('tasks').select('id', 'user_id', 'title', 'description', 'segment', 'due_by', 'completed')
 }
+
+
+
+function find(id) {
+    return db('tasks')
+    .join('users', 'tasks.user_id', "users.id")
+    .select( 'tasks.id', 'tasks.user_id', 'tasks.title', 'tasks.description', 'tasks.segment', 'tasks.due_by', 'tasks.completed' )
+    .where({ "user_id" : id})
+    .then(r =>{
+        console.log(r)
+      const change= r.map( task =>{
+          console.log(task)
+        if (task.completed ===  0){
+          return {...task, completed: false}
+        }
+        else{
+          return {...task, completed: true}
+        }
+      })
+      return change
+    })
+    
+  }
+
 
 function findBy(filter) {
     return db('tasks').where(filter)
@@ -22,7 +47,7 @@ function findById(id) {
 }
 
 async function add(task) {
-    const [id] = await db('tasks').insert(task)
+    const [id] = await db('tasks').insert(task, "id")
     return findById(id)
 }
 
