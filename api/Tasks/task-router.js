@@ -22,7 +22,7 @@ router.get('/all', authenticator, (req, res) => {
         })
 })
 
-router.get('/:id', authenticator, (req, res) => {
+router.get('/:id',  authenticator, (req, res) => {
     const id = req.params
     console.log(id)
     Tasks.findBy(id)
