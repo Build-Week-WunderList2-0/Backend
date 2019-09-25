@@ -11,7 +11,9 @@ exports.seed = function (knex) {
           description: "this is my descritpion",
           segment: "Personal",
           due_by: "05/29/2020",
-          completed: false
+          completed: false,
+          weekly: false,
+          monthly: false,
         },
         {
           user_id: 1,
@@ -19,7 +21,9 @@ exports.seed = function (knex) {
           description: "that'd be cool",
           segment: "Bizniss",
           due_by: "05/29/2021",
-          completed: false
+          completed: false,
+          weekly: false,
+          monthly: false
         },
         {
           user_id: 1,
@@ -27,7 +31,9 @@ exports.seed = function (knex) {
           description: "that'd be cool",
           segment: "Bizniss",
           due_by: "05/29/2021",
-          completed: false
+          completed: false,
+          weekly: false,
+          monthly: false
         }
       ]);
     });
