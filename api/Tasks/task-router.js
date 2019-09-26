@@ -13,9 +13,10 @@ router.post('/add', authenticator, (req, res) => {
 })
 
 router.get('/', authenticator, (req, res) => {
-         const {user_id} =  req.body
          
-    Tasks.find(user_id)
+         const id =  parseInt((req.headers.user_id))
+         
+    Tasks.find(id)
         .then(gotem => {
             res.status(200).json( gotem )
         })
