@@ -28,9 +28,7 @@ function find(id) {
         if (task.completed ===  0){
           return {...task, completed: false, weekly: false, monthly:false}
         }
-        else{
-          return {...task, completed: true}
-        }
+        
       })
       return change
     })
