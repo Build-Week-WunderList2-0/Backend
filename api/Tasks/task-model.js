@@ -24,10 +24,29 @@ function find(id) {
     .then(r =>{
         console.log(r)
       const change= r.map( task =>{
-          console.log(task)
+          
         if (task.completed ===  0){
-          return {...task, completed: false, weekly: false, monthly:false}
+          task.completed = false
         }
+        if (task.completed ===  1){
+         task.completed = true
+        }
+        
+        if(task.weekly === 0){
+          task.weekly = false
+        }
+        if(task.weekly === 1){
+          task.weekly = true
+        }
+        if(task.monthly === 0){
+          task.monthly = false
+        }
+        if(task.monthly === 1){
+          task.monthly = true
+        }
+        
+
+        return task
         
       })
       return change
