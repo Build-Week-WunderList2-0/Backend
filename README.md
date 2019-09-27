@@ -75,14 +75,8 @@ Example response:
 
 ### **`GET /tasks/`**
 
-Requires an `authorization` header with a JWT. it will return an array of objects in this format:
-Example request body:
-```
-{
-  "user_id": 1
-}
+Requires an `authorization`  and  with a JWT and `user_id` with users id head. it will return an array of objects in this format:
 
-```
 
 Example response:
 ```

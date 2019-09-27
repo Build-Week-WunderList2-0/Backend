@@ -12,9 +12,9 @@ exports.up = function (knex) {
             task.string('description', 255).notNullable()
             task.string('segment', 128).notNullable()
             task.string('due_by', 255).notNullable()
-            task.boolean('completed')
-            task.boolean('weekly')
-            task.boolean('monthly')
+            task.boolean('completed').defaultTo(false)
+            task.boolean('weekly').defaultTo(false)
+            task.boolean('monthly').defaultTo(false)
         })
 };
 
